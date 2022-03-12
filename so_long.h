@@ -6,7 +6,23 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 15:51:15 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/12 15:51:16 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:31:43 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SO_LONG_H
+# define SO_LONG_H
+
+//          ----------========== {   INCLUDES   } ==========----------
+
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <stddef.h>
+# include "mlx.h"
+
+//          ----------========== {              } ==========----------
+
+//          ----------========== {              } ==========----------
+
+#endif
