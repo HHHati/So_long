@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/01 14:20:24 by bade-lee          #+#    #+#              #
-#    Updated: 2022/03/13 15:08:50 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/03/13 15:28:05 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,7 +119,7 @@ $(NAME): $(OBJ_DIR) $(OBJ)
 	@ranlib $(NAME)
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 
 clean:
 	@rm -f $(OBJ)
