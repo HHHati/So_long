@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/01 14:20:24 by bade-lee          #+#    #+#              #
-#    Updated: 2022/03/13 13:48:12 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/03/13 15:08:50 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,7 +115,6 @@ $(OBJ_DIR)%.o: %.c
 	@printf "\e[1;32m.\e[0;m"
 
 $(NAME): $(OBJ_DIR) $(OBJ)
-	@printf "\n\e[1;32m[Libft.a]\e[0;m\n"
 	@ar -rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
@@ -127,6 +126,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -rf $(OBJ_DIR)
 
 re: fclean all
 

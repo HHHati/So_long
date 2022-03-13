@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 15:51:15 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/13 13:02:28 by bade-lee         ###   ########.fr       */
+/*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
+/*   Updated: 2022/03/13 15:05:54 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,9 @@
 
 //          ----------========== {   INCLUDES   } ==========----------
 
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <stddef.h>
-# include "minilibx/mlx.h"
+# include "../minilibx/mlx.h"
+# include "../libft/include/libft.h"
 
-//          ----------========== {              } ==========----------
-
-//          ----------========== {              } ==========----------
+//          ----------========== {     FCTS     } ==========----------
 
 #endif
