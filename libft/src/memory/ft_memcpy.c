@@ -1,17 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 15:51:21 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/12 16:22:42 by bade-lee         ###   ########.fr       */
+/*   Created: 2021/10/04 22:07:16 by Basile19          #+#    #+#             */
+/*   Updated: 2021/10/27 12:53:47 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-int	main(void)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
+	char		*d;
+	const char	*s;
+
+	if ((dst == src) || n == 0)
+		return (dst);
+	if (!dst && !src)
+		return (0);
+	d = (char *)dst;
+	s = (const char *)src;
+	while (n != 0)
+	{
+		n--;
+		d[n] = s[n];
+	}
+	return (dst);
 }

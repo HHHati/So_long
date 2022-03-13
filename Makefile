@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 16:19:10 by bade-lee          #+#    #+#              #
-#    Updated: 2022/03/12 16:21:48 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/03/13 13:32:06 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 NAME = so_long
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-INCLUDE = -I include
+INCLUDE = -I includes/
 
 #          ----------========== {     SRCS     } ==========----------
 
@@ -28,7 +28,7 @@ SRC += \
 #          ----------========== {     OBJS     } ==========----------
 
 SRC_DIR = src/
-OBJ_DIR = obj_printf/
+OBJ_DIR = obj_$(NAME)/
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
 VPATH= $(shell find $(SRC_DIR) -type d)
@@ -38,16 +38,15 @@ VPATH= $(shell find $(SRC_DIR) -type d)
 all: $(NAME)
 
 $(OBJ_DIR)%.o: %.c
-	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $(NAME)
 	@printf "\e[1;32m.\e[0;m"
 
 $(NAME): $(OBJ_DIR) $(OBJ)
-	@ar -rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
 	@printf "\n\e[1;32m[So_long]\e[0;m\n"
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
+	@printf "\e[1;32mCreate $(OBJ_DIR)]\e[0;m\n"
 
 exe: all
 	@$(CC) $(FLAGS) $(INCLUDE) $(NAME) main.c
