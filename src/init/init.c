@@ -6,12 +6,11 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 10:45:37 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/26 14:09:39 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/26 14:14:16 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
-
 
 void	check_args(char **argv, int argc)
 {
@@ -31,14 +30,18 @@ void	check_args(char **argv, int argc)
 	}
 }
 
-int	map_len(t_global *global)
+static size_t	map_len(t_global *global)
 {
+	size_t	i;
 
+	i = 0;
+	while (global->map[i])
+		i++;
+	return (i);
 }
 
 void	map_join(t_global *global)
 {
-	
 }
 
 void	init_map(t_global *global, char **argv, int argc)
