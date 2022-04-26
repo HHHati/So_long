@@ -6,10 +6,10 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:55:00 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/25 16:55:57 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:33:14 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	free_map(t_global *global)

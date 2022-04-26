@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/26 11:07:16 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:22:52 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 //          ----------========== {   INCLUDES   } ==========----------
 
-# include "../minilibx/mlx.h"
-# include "../libft/include/libft.h"
+//# include "../minilibx/mlx.h"
+# include "libft/include/libft.h"
+# include <fcntl.h>
 
 //          ----------========== {     DEFS     } ==========----------
 
@@ -63,5 +64,14 @@ typedef struct s_global
 }				t_global;
 
 //          ----------========== {     FCTS     } ==========----------
+
+int			main(int argc, char **argv);
+void		init_map(t_global *global, char **argv, int argc);
+void		check_args(char **argv, int argc);
+void		check_characters(t_global *global);
+static int	check_content(char i, int *c, int *e, int *p);
+void		check_close(t_global *global);
+void		check_square(t_global *global);
+void		error_reason(t_global *global, char *str);
 
 #endif
