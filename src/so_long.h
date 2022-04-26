@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/25 17:04:51 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:07:16 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@
 # define E_CONT "La map n'a pas un contenu valide."
 # define E_SQUARE "La map n'est pas rectangulaire."
 # define E_CLOSE "La map n'est pas fermée."
+# define E_ARGS "Les arguments sont incorrects."
+# define E_BER "La map doit être en .ber."
+# define E_FD "File descriptor non valide."
 
 //          ----------========== {    STRUCT    } ==========----------
 
