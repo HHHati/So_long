@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/26 11:22:52 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/26 14:05:26 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 //          ----------========== {   INCLUDES   } ==========----------
 
 //# include "../minilibx/mlx.h"
-# include "libft/include/libft.h"
+# include "../libft/include/libft.h"
 # include <fcntl.h>
 
 //          ----------========== {     DEFS     } ==========----------
@@ -28,6 +28,7 @@
 # define E_ARGS "Les arguments sont incorrects."
 # define E_BER "La map doit être en .ber."
 # define E_FD "File descriptor non valide."
+# define E_ALLOC "Problème d'allocation."
 
 //          ----------========== {    STRUCT    } ==========----------
 
