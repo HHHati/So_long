@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 17:17:24 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/13 13:52:27 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:25:40 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@
 
 //          ----------========== {  GNL  UTILS  } ==========----------
 
-char	*ft_strchr_gnl(char *s, int c);
-size_t	ft_strlen_gnl(char *str);
-char	*ft_strjoin_gnl(char *s1, char *s2);
+size_t	g_ft_strlen(char *s);
+char	*ft_get_line(char *str);
+char	*ft_update(char *str);
 
 //          ----------========== {   GNL FCTS   } ==========----------
 
-char	*ft_read_line(int fd, char *s);
-char	*ft_get_line(char *s);
-char	*ft_new_stat(char *s);
-char	*ft_free(char *s);
+static char	*ft_strchr_gnl(char *s, int c);
+static char	*ft_strjoin_gnl(char *str, char *buff);
+char	*ft_read(int fd, char *str);
+static char	*output_line(char **str, int fd);
 char	*get_next_line(int fd);
 
 #endif

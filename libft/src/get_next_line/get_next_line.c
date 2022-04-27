@@ -3,111 +3,128 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 17:17:21 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/08 15:33:21 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:23:54 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_read_line(int fd, char *s)
+static char	*ft_strchr_gnl(char *s, int c)
 {
-	char	*buffer;
-	ssize_t	r;
+	int	x;
 
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
+	x = 0;
+	if (!s)
 		return (0);
-	r = 1;
-	while (r != 0 && !ft_strchr_gnl(s, '\n'))
+	if (c == '\0')
+		return ((char *)&s[g_ft_strlen(s)]);
+	while (s[x] != '\0')
 	{
-		r = read(fd, buffer, BUFFER_SIZE);
-		if (r == -1)
-		{
-			free(buffer);
-			return (0);
-		}
-		buffer[r] = '\0';
-		s = ft_strjoin_gnl(s, buffer);
+		if (s[x] == (char) c)
+			return ((char *)&s[x]);
+		x++;
 	}
-	free(buffer);
-	return (s);
+	return (0);
 }
 
-char	*ft_get_line(char *s)
+static char	*ft_strjoin_gnl(char *str, char *buff)
 {
-	int		i;
+	size_t	a;
+	size_t	b;
 	char	*line;
 
-	if (!s[0])
-		return (0);
-	i = 0;
-	while (s[i] != '\n' && s[i] != '\0')
-		i++;
-	line = malloc(sizeof(char) * (i + 2));
+	line = malloc(sizeof(char) * ((g_ft_strlen(str) + g_ft_strlen(buff)) + 1));
 	if (!line)
-		return (0);
-	i = 0;
-	while (s[i] != '\n' && s[i] != '\0')
 	{
-		line[i] = s[i];
-		i++;
+		free(str);
+		return (NULL);
 	}
-	if (s[i] == '\n')
+	a = 0;
+	b = 0;
+	while (str[a])
 	{
-		line[i] = '\n';
-		i++;
+		line[a] = str[a];
+		a++;
 	}
-	line[i] = '\0';
+	while (buff[b])
+	{
+		line[a + b] = buff[b];
+		b++;
+	}
+	line[g_ft_strlen(str) + g_ft_strlen(buff)] = '\0';
+	free(str);
 	return (line);
 }
 
-char	*ft_new_stat(char *s)
+char	*ft_read(int fd, char *str)
 {
-	char	*new;
-	int		i;
-	int		n;
+	char	*buff;
+	int		rd;
 
-	i = 0;
-	while (s[i] != '\n' && s[i] != '\0')
-		i++;
-	if (!s[i])
-		return (ft_free(s));
-	new = malloc(sizeof(char) * (ft_strlen_gnl(s) - i + 1));
-	if (!new)
-		return (ft_free(s));
-	n = 0;
-	i++;
-	while (s[i] != '\0')
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
+		return (NULL);
+	rd = -5;
+	while (!ft_strchr_gnl(str, '\n'))
 	{
-		new[n] = s[i];
-		i++;
-		n++;
+		rd = read(fd, buff, BUFFER_SIZE);
+		if (rd == 0)
+			break ;
+		if (rd == -1)
+			break ;
+		buff[rd] = '\0';
+		str = ft_strjoin_gnl(str, buff);
+		if (!str)
+			return (NULL);
 	}
-	new[n] = '\0';
-	free(s);
-	return (new);
+	free(buff);
+	return (str);
 }
 
-char	*ft_free(char *s)
+static char	*output_line(char **str, int fd)
 {
-	free(s);
-	return (0);
+	char		*line;
+
+	str[fd] = ft_read(fd, str[fd]);
+	if (!str[fd])
+		return (NULL);
+	if (ft_strchr_gnl(str[fd], '\n'))
+	{
+		line = ft_get_line(str[fd]);
+		str[fd] = ft_update(str[fd]);
+		return (line);
+	}
+	else
+	{
+		if (str[fd][0] == '\0')
+		{
+			free(str[fd]);
+			return (NULL);
+		}
+		line = ft_strdup(str[fd]);
+		str[fd][0] = '\0';
+		return (line);
+	}
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*s;
 	char		*line;
+	static char	*str[OPEN_MAX];
 
-	if (fd < 0 || BUFFER_SIZE < 1)
-		return (0);
-	s = ft_read_line(fd, s);
-	if (!s)
-		return (0);
-	line = ft_get_line(s);
-	s = ft_new_stat(s);
-	return (line);
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
+		return (NULL);
+	if (!str[fd])
+		str[fd] = ft_strdup("");
+	if (ft_strchr_gnl(str[fd], '\n'))
+	{
+		line = ft_get_line(str[fd]);
+		str[fd] = ft_update(str[fd]);
+		return (line);
+	}
+	else
+		return (output_line(str, fd));
 }

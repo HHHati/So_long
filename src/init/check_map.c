@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:25:08 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/26 11:46:13 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:18:36 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	check_close(t_global *global)
 
 static int	check_content(char i, int *c, int *e, int *p)
 {
+
 	if (i == 'C')
 		*c += 1;
 	else if (i == 'E')

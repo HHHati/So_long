@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 10:45:37 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 13:53:27 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:19:55 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ char **map_reader(int fd)
 	if (!map[0])
 		map_error(map, fd);
 	map[1] = 0;
-	i = 0;
-	while (map[i])
+	i = 1;
+	while (map[i - 1])
 	{
 		map = map_join(map, get_next_line(fd), fd);
 		if (!map[i])
