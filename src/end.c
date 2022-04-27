@@ -3,13 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   end.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:55:00 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/26 11:33:14 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:35:37 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void	free_map(t_global *global)
+void	free_map(char **map)
+{
+	size_t i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
+	if (map)
+		free(map);
+}

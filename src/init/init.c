@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 10:45:37 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 14:19:55 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 15:05:45 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	map_error(char **map, int fd)
 {
-	// if (map)
-		// free_map(map);
+	if (map)
+		free_map(map);
 	if (fd > -1)
 		close (fd);
 	ft_printf("Error\n%s\n", E_MAP);
@@ -101,9 +101,9 @@ void	init_map(t_global *global, char **argv, int argc)
 	if (!global->map || !global->map[0] || !global->map[1] || !global->map[2]
 		|| !global->map[0][0] || !global->map[0][1] || !global->map[0][2])
 		error_reason(global, E_LITTLE);
-	check_characters(global);
-	check_close(global);
 	check_square(global);
+	check_close(global);
+	check_characters(global);
 	//set_player(global)
 	close(global->fd);
 }

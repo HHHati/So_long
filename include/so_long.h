@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 14:02:18 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:35:50 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,6 @@ void		error_reason(t_global *global, char *str);
 void		map_error(char **map, int fd);
 char 		**map_join(char **map, char *line, int fd);
 char 		**map_reader(int fd);
+void		free_map(char **map);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:25:08 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 14:18:36 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 15:18:41 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	error_reason(t_global *global, char *str)
 {
-//	free_map(global);
+	free_map(global->map);
 	ft_printf("Error\n%s\n", str);
+	exit (0);
 }
 
 void	check_square(t_global *global)
@@ -36,30 +37,25 @@ void	check_square(t_global *global)
 			x++;
 		if (x != global->sizex)
 			error_reason(global, E_SQUARE);
-		global->map[global->sizey] += 1;
+		global->sizey += 1;
 	}
 }
 
 void	check_close(t_global *global)
 {
 	size_t	i;
-	size_t	lenx;
-	size_t	leny;
 
 	i = 0;
-	lenx = ft_strlen(global->map[0]);
-	while (global->map[leny])
-		leny++;
-	while (global->map[i])
+	while (i < global->sizex)
 	{
-		if (global->map[i][0] != '1' && global->map[i][lenx - 1] != '1')
+		if (global->map[i][0] != '1' || global->map[global->sizey - 1][i] != '1')
 			error_reason(global, E_CLOSE);
 		i++;
 	}
 	i = 0;
-	while (global->map[0])
+	while (i < global->sizey)
 	{
-		if (global->map[0][i] != '1' || global->map[leny - 1][i] != '1')
+		if (global->map[0][i] != '1' || global->map[i][global->sizex - 1] != '1')
 			error_reason(global, E_CLOSE);
 		i++;
 	}
@@ -67,7 +63,6 @@ void	check_close(t_global *global)
 
 static int	check_content(char i, int *c, int *e, int *p)
 {
-
 	if (i == 'C')
 		*c += 1;
 	else if (i == 'E')
@@ -76,7 +71,9 @@ static int	check_content(char i, int *c, int *e, int *p)
 		*p += 1;
 	else if (i == '0' || i == '1')
 		return (1);
-	return (0);
+	else
+		return (0);
+	return (1);
 }
 
 void	check_characters(t_global *global)
