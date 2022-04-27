@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 13:24:31 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:02:18 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,11 @@ int			main(int argc, char **argv);
 void		init_map(t_global *global, char **argv, int argc);
 void		check_args(char **argv, int argc);
 void		check_characters(t_global *global);
-static int	check_content(char i, int *c, int *e, int *p);
 void		check_close(t_global *global);
 void		check_square(t_global *global);
 void		error_reason(t_global *global, char *str);
+void		map_error(char **map, int fd);
+char 		**map_join(char **map, char *line, int fd);
+char 		**map_reader(int fd);
 
 #endif
