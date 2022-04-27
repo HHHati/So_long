@@ -6,11 +6,11 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 10:45:37 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 15:05:45 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 16:17:43 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "../include/so_long.h"
 
 void	map_error(char **map, int fd)
 {

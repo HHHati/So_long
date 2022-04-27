@@ -6,11 +6,11 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:25:08 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 15:18:41 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 16:17:40 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "../include/so_long.h"
 
 void	error_reason(t_global *global, char *str)
 {

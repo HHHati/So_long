@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 16:10:46 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 16:19:24 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@
 //          ----------========== {     DEFS     } ==========----------
 
 # define RES 32
+
+# define FLOOR "sprites/Sol.xpm"
+# define WALL "sprites/Wall.xpm"
+# define PLAYER "sprites/Pikachu.xpm"
+# define COLECTIBLE "sprites/Pokeball.xpm"
+# define EXIT "sprites/Exit.xpm"
+
 # define E_CONT "La map n'a pas un contenu valide."
 # define E_SQUARE "La map n'est pas rectangulaire."
 # define E_CLOSE "La map n'est pas fermée."
@@ -80,5 +87,7 @@ void		map_error(char **map, int fd);
 char 		**map_join(char **map, char *line, int fd);
 char 		**map_reader(int fd);
 void		free_map(char **map);
+void		mlx_start(t_global *global);
+void		put_image(t_global *global);
 
 #endif
