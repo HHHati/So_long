@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/26 14:05:26 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/27 13:24:31 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define E_BER "La map doit être en .ber."
 # define E_FD "File descriptor non valide."
 # define E_ALLOC "Problème d'allocation."
+# define E_MAP "Problème de lecture de la map."
+# define E_LITTLE "La map est trop petite."
 
 //          ----------========== {    STRUCT    } ==========----------
 
