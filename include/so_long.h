@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 14:35:50 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/27 16:10:46 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 //          ----------========== {   INCLUDES   } ==========----------
 
-//# include "../minilibx/mlx.h"
+# include "../minilibx/mlx.h"
 # include "../libft/include/libft.h"
 # include <fcntl.h>
 
@@ -30,6 +30,7 @@
 # define E_FD "File descriptor non valide."
 # define E_ALLOC "Problème d'allocation."
 # define E_MAP "Problème de lecture de la map."
+# define E_IMG "Problème de lecture de l'image."
 # define E_LITTLE "La map est trop petite."
 
 //          ----------========== {    STRUCT    } ==========----------
