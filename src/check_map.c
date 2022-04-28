@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:25:08 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 16:17:40 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/28 11:45:00 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	check_square(t_global *global)
 
 void	check_close(t_global *global)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < global->sizex)

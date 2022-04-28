@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
+#    By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 16:19:10 by bade-lee          #+#    #+#              #
-#    Updated: 2022/03/13 15:04:12 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/04/28 11:49:10 by Basile19         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,19 @@
 
 NAME = so_long
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -Imlx
-INCLUDE = -I src/so_long.h
+FLAGS = -Wall -Wextra -Werror -Imlx -fsanitize=address
+INCLUDE = -I so_long.h
 LIB = libft/libft.a
 MLX = minilibx/libmlx.a
 MLXFLAGS = -framework OpenGL -framework AppKit
 
 #          ----------========== {     SRCS     } ==========----------
 
-SRC = src/main.c
+SRC =	src/main.c\
+		src/check_map.c\
+		src/end.c\
+		src/init.c\
+		src/window.c
 
 #          ----------========== {     OBJS     } ==========----------
 
@@ -36,10 +40,11 @@ $(NAME): $(OBJ)
 	@make -C libft
 	@make -sC minilibx
 	@$(CC) $(FLAGS) $(MLXFLAGS) $(OBJ) $(LIB) $(MLX) -o $(NAME)
-	@printf "\e[1;32m.\e[0;m"
+	@printf "\e[1;32m[So_long]\e[0;m"
 
 %.o: %.c
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+	@printf "\e[1;32m.\e[0;m"
 
 clean:
 	@make -C libft clean
@@ -50,7 +55,7 @@ fclean: clean
 	@make -C libft fclean
 	@make -C minilibx clean
 	@rm -f $(NAME)
-	@printf "\e[0;31m[so_long deleted]\e[0;m"
+	@printf "\e[0;31m[So_long deleted]\e[0;m"
 
 re: fclean all
 
