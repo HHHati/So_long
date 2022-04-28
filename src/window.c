@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 15:43:06 by Basile19          #+#    #+#             */
-/*   Updated: 2022/04/27 16:17:15 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/04/28 10:56:01 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,5 @@ void	mlx_start(t_global *global)
 	global->vars.win = mlx_new_window(global->vars.mlx, global->sizex * RES,
 		global->sizey * RES, "So_long");
 	put_image(global);
-//	map_reload(global);
-//	mlx_hook(global->vars.win, 17, 0, end_game, global);
-//	mlx_key_hook(data->vars.win, so_long, global);
 	mlx_loop(global->vars.mlx);
 }
