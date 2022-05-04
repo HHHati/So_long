@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   end.c                                              :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 16:55:00 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/05/04 13:50:39 by Basile19         ###   ########.fr       */
+/*   Created: 2022/05/04 13:41:11 by Basile19          #+#    #+#             */
+/*   Updated: 2022/05/04 13:57:48 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void	free_map(char **map)
+void	so_long(t_global *global)
 {
-	size_t i;
-
-	i = 0;
-	while (map[i])
-	{
-		free(map[i]);
-		i++;
-	}
-	if (map)
-		free(map);
+	if (keycode == 53)
+		key_exit(global);
+	else if (keycode == 13)
+		key_up(global);
+	else if (keycode == 1)
+		key_down(global);
+	else if (keycode == 0)
+		key_left(global);
+	else if (keycode == 2)
+		key_right(global);
+	return (0);
 }
-
-void	exit_game(t_global *global)
-{
-	if (global->player.items > 0)
-		return ;
-	global->player.moves += 1;
-	ft_printf("%i\n", global->player.moves);
-	end_msg(global);
-}
-
-void	end_msg(t_global *global)
