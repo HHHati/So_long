@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 16:19:24 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:33:20 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ char 		**map_reader(int fd);
 void		free_map(char **map);
 void		mlx_start(t_global *global);
 void		put_image(t_global *global);
+int			end_msg(t_global *global);
 
 #endif
