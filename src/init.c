@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 10:45:37 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/05/16 15:41:57 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:22:11 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	map_error(char **map, int fd)
 	ft_printf("Error\n%s\n", E_MAP);
 }
 
-char **map_join(char **map, char *line, int fd)
+char	**map_join(char **map, char *line, int fd)
 {
 	char	**updated_map;
 	size_t	i;
 
 	i = 0;
 	if (!line)
-		return(map);
+		return (map);
 	while (map[i])
 		i++;
 	updated_map = malloc((i + 2) * sizeof(char *));
@@ -43,10 +43,10 @@ char **map_join(char **map, char *line, int fd)
 	updated_map[i] = line;
 	updated_map[i + 1] = 0;
 	free(map);
-	return(updated_map);
+	return (updated_map);
 }
 
-char **map_reader(int fd)
+char	**map_reader(int fd)
 {
 	char	**map;
 	size_t	i;

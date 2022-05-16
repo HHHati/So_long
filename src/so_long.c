@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 13:41:11 by Basile19          #+#    #+#             */
-/*   Updated: 2022/05/16 15:51:01 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:23:44 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	set_img(t_global *global, char c, int x, int y)
 {
 	int			i;
-	static char str[6] = "01PCE";
+	static char	str[6] = "01PCE";
 
 	i = 0;
 	while (str[i])
@@ -30,8 +30,8 @@ void	set_img(t_global *global, char c, int x, int y)
 
 void	map_refresh(t_global *global)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	x = 0;
 	y = 0;

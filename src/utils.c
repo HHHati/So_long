@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:12:49 by Basile19          #+#    #+#             */
-/*   Updated: 2022/05/16 15:52:04 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:22:43 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	set_player(t_global *global)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (y < global->sizey)
@@ -37,7 +37,7 @@ void	set_player(t_global *global)
 
 void	null_init(t_global *global)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	global->map = 0;
