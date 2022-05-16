@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:12:49 by Basile19          #+#    #+#             */
-/*   Updated: 2022/05/16 15:23:11 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:52:04 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	set_player(t_global *global)
 		{
 			if (global->map[y][x] == 'P')
 			{
-				global->player.x == x;
-				global->player.y == y;
+				global->player.x = x;
+				global->player.y = y;
 				return ;
 			}
 			x++;
@@ -37,7 +37,7 @@ void	set_player(t_global *global)
 
 void	null_init(t_global *global)
 {
-	size_t ;
+	size_t i;
 
 	i = 0;
 	global->map = 0;

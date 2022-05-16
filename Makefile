@@ -6,7 +6,7 @@
 #    By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 16:19:10 by bade-lee          #+#    #+#              #
-#    Updated: 2022/04/28 11:49:10 by Basile19         ###   ########.fr        #
+#    Updated: 2022/05/16 15:46:32 by Basile19         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,10 @@ SRC =	src/main.c\
 		src/check_map.c\
 		src/end.c\
 		src/init.c\
-		src/window.c
+		src/window.c\
+		src/keys.c\
+		src/utils.c\
+		src/so_long.c
 
 #          ----------========== {     OBJS     } ==========----------
 

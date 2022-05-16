@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/05/16 15:44:01 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:54:31 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,14 @@ void	put_image(t_global *global);
 int		end_msg(t_global *global);
 void	null_init(t_global *global);
 void	error_img(t_global *global, char *str);
-int		so_long(t_global *global);
+int		so_long(int keycode, t_global *global);
 void	set_player(t_global *global);
+void	exit_game(t_global *global);
+void	map_refresh(t_global *global);
+void	key_up(t_global *global);
+void	key_down(t_global *global);
+void	key_right(t_global *global);
+void	key_left(t_global *global);
+void	key_exit(t_global *global);
 
 #endif

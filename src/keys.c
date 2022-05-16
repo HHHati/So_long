@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 13:34:29 by Basile19          #+#    #+#             */
-/*   Updated: 2022/05/04 13:56:41 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:49:18 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	key_up(t_global *global)
 	}
 	else if (global->map[global->player.y - 1][global->player.x] == 'E')
 		exit_game(global);
-	map_reload(global);
+	map_refresh(global);
 }
 
 void	key_down(t_global *global)
@@ -49,7 +49,7 @@ void	key_down(t_global *global)
 	}
 	else if (global->map[global->player.y + 1][global->player.x] == 'E')
 		exit_game(global);
-	map_reload(global);
+	map_refresh(global);
 }
 
 void	key_right(t_global *global)
@@ -69,7 +69,7 @@ void	key_right(t_global *global)
 	}
 	else if (global->map[global->player.y][global->player.x + 1] == 'E')
 		exit_game(global);
-	map_reload(global);
+	map_refresh(global);
 }
 
 void	key_left(t_global *global)
@@ -89,7 +89,7 @@ void	key_left(t_global *global)
 	}
 	else if (global->map[global->player.y][global->player.x - 1] == 'E')
 		exit_game(global);
-	map_reload(global);
+	map_refresh(global);
 }
 
 void	key_exit(t_global *global)
@@ -99,7 +99,7 @@ void	key_exit(t_global *global)
 	i = 0;
 	if (global->map)
 		free_map(global->map);
-	while (i < IMG_NUMBER)
+	while (i < 5)
 	{
 		if (global->img[i].ptr)
 			mlx_destroy_image(global->vars.mlx, global->img[i].ptr);
@@ -111,5 +111,4 @@ void	key_exit(t_global *global)
 		free(global->vars.mlx);
 	ft_printf("Fin du jeu !\n");
 	exit(0);
-	return (0);
 }
