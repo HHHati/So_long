@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:55:00 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/05/16 15:09:23 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:35:33 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,16 @@ int	end_msg(t_global *global)
 	return (0);
 }
 
-void	error_img(t_global *global, chqr *str)
+void	error_img(t_global *global, char *str)
 {
 	size_t	i;
 
 	if (global->map)
 		free_map(global->map);
-	if (global->vars.mlx);
-		free(data->vars.mlx);
-	if (global->vars.win);
-		free(data->vars.win);
+	if (global->vars.mlx)
+		free(global->vars.mlx);
+	if (global->vars.win)
+		free(global->vars.win);
 	i = 0;
 	while (i < 5)
 	{

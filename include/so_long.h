@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/05/16 14:33:20 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:44:01 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,23 @@ typedef struct s_global
 
 //          ----------========== {     FCTS     } ==========----------
 
-int			main(int argc, char **argv);
-void		init_map(t_global *global, char **argv, int argc);
-void		check_args(char **argv, int argc);
-void		check_characters(t_global *global);
-void		check_close(t_global *global);
-void		check_square(t_global *global);
-void		error_reason(t_global *global, char *str);
-void		map_error(char **map, int fd);
-char 		**map_join(char **map, char *line, int fd);
-char 		**map_reader(int fd);
-void		free_map(char **map);
-void		mlx_start(t_global *global);
-void		put_image(t_global *global);
-int			end_msg(t_global *global);
+int		main(int argc, char **argv);
+void	init_map(t_global *global, char **argv, int argc);
+void	check_args(char **argv, int argc);
+void	check_characters(t_global *global);
+void	check_close(t_global *global);
+void	check_square(t_global *global);
+void	error_reason(t_global *global, char *str);
+void	map_error(char **map, int fd);
+char 	**map_join(char **map, char *line, int fd);
+char 	**map_reader(int fd);
+void	free_map(char **map);
+void	mlx_start(t_global *global);
+void	put_image(t_global *global);
+int		end_msg(t_global *global);
+void	null_init(t_global *global);
+void	error_img(t_global *global, char *str);
+int		so_long(t_global *global);
+void	set_player(t_global *global);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 10:45:37 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/27 16:17:43 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:41:57 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,6 @@ void	init_map(t_global *global, char **argv, int argc)
 	check_square(global);
 	check_close(global);
 	check_characters(global);
-	//set_player(global)
+	set_player(global);
 	close(global->fd);
 }
