@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:25:08 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/28 11:45:00 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:12:52 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ void	check_close(t_global *global)
 	i = 0;
 	while (i < global->sizex)
 	{
-		if (global->map[i][0] != '1' || global->map[global->sizey - 1][i] != '1')
+		if (global->map[0][i] != '1' || global->map[global->sizey - 1][i] != '1')
 			error_reason(global, E_CLOSE);
 		i++;
 	}
 	i = 0;
 	while (i < global->sizey)
 	{
-		if (global->map[0][i] != '1' || global->map[i][global->sizex - 1] != '1')
+		if (global->map[i][0] != '1' || global->map[i][global->sizex - 1] != '1')
 			error_reason(global, E_CLOSE);
 		i++;
 	}
