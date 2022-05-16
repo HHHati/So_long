@@ -6,7 +6,7 @@
 /*   By: Basile19 <Basile19@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 14:37:52 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/05/16 16:20:32 by Basile19         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:52:50 by Basile19         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 
 # define RES 32
 
-# define FLOOR "sprites/Sol.xpm"
+# define FLOOR "sprites/Floor.xpm"
 # define WALL "sprites/Wall.xpm"
-# define PLAYER "sprites/Pikachu.xpm"
-# define COLECTIBLE "sprites/Pokeball.xpm"
+# define PLAYER "sprites/Player.xpm"
+# define COLECTIBLE "sprites/Colectible.xpm"
 # define EXIT "sprites/Exit.xpm"
 
 # define E_CONT "La map n'a pas un contenu valide."
